@@ -7,9 +7,10 @@ export const config = {
     // Always run for API routes
     '/(api|trpc)(.*)',
   ],
+  
 };
 
-const isPublicRoute = createRouteMatcher(['/sign-in(.*)', '/sign-up(.*)'])
+const isPublicRoute = createRouteMatcher(['/sign-in(.*)', '/sign-up(.*)', '/api/uploadthing'])
 
 export default clerkMiddleware((auth, request) => {
   if (!isPublicRoute(request)) {
